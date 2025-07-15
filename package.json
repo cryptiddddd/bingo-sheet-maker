@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "npx tsc",
-    "dev": "npx tsc -w & npx live-server ./site"
+    "dev": "npx tsc -w & npx wrangler pages dev ./site",
+    "deploy": "npx tsc && npx wrangler pages deploy ./site"
   },
   "dependencies": {
     "jspdf": "^3.0.1"
