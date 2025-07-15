@@ -1,8 +1,13 @@
 {
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "npx tsc -w & npx live-server ./site"
+  },
   "dependencies": {
     "jspdf": "^3.0.1"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wrangler": "^4.24.3"
   }
 }
