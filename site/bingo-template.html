@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>prediction bingo sheet</title>
+
+    <style media="all">
+        :root {
+            --main: black;
+            --bg: white;
+        }
+
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+
+
+        body {
+            margin: 0;
+
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 1em;
+
+            padding: 0.5in;
+            max-width: 100dvw;
+        }
+
+        .bingo-board {
+            --size: 7.5in;
+
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+            width: var(--size);
+            height: var(--size);
+
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        .cell, .bingo-board {
+            background: var(--bg);
+            border: 1px solid var(--main);
+        }
+
+        .cell {
+            padding: 2em;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            align-content: center;
+        }
+
+        #title {
+            --spacing: 2em;
+
+            
+            letter-spacing: var(--spacing);
+            font-size: 3em;
+            font-weight: 500;
+            text-align: center;
+
+            width: 100%;
+            margin-bottom: 2em;
+            margin-left: var(--spacing);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">BINGO</h1>
+
+    <div class="bingo-board">
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+
+        <div class="cell free" contenteditable id="free-cell"></div>
+
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+        <div class="cell" contenteditable></div>
+    </div>
+
+</body>
+</html>

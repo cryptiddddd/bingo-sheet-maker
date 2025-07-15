@@ -1,0 +1,132 @@
+:root {
+    --accent-color: #bb34bb;
+    --main: white;
+    --bg: linear-gradient(45deg, #0f0f0f, #161616);
+}
+
+::selection {
+    color: var(--accent-color);
+    background: #fff1;
+}
+
+:focus-visible {
+    outline: 1px solid #fff5;
+    outline-offset: 4px;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg);
+    color: var(--main);
+    font-family: Ubuntu, monospace;
+    font-size: 12px;
+}
+
+
+label {
+    display: contents;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+
+    counter-reset: counter 0;
+}
+
+li {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1em;
+    margin-bottom: 0.75em;
+
+    counter-increment: counter 1;
+}
+
+li::before {
+    content: counter(counter, decimal);
+}
+
+li > input {
+    flex-grow: 1;
+}
+
+input, textarea, button {
+    font: inherit;
+    background: transparent;
+    color: inherit;
+    border: none;
+
+    border-radius: 1ex;
+    padding: 1ex 1em;
+}
+
+
+input, textarea {
+    border: 1px solid grey;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 3ch;
+}
+
+button {
+    background: #ffffff09;
+}
+
+button:hover {
+    background: #fff1;
+}
+
+section {
+    background-color: #0009;
+
+    border-radius: 1em;
+    padding: 1em 2em;
+
+    margin: 2em 0;
+}
+
+.inputs {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2em;
+}
+
+.field-space {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+.field-space.required .field-label-text::after {
+    content: " *";
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+}
+
+.hint {
+    font-style: italic;
+    text-align: right;
+}
+
+#vanity {
+    font-style: italic;
+    opacity: 0.6;
+    margin: 2em;
+}

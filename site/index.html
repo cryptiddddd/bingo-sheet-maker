@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>bingo generator</title>
+
+    <link rel="stylesheet" href="style.css" >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+    
+    <script type="module" src="scripts/list-input.js"></script>
+    <script type="module" src="scripts/pdf-maker.js"></script>
+</head>
+<body class="interface">
+    
+    <section class="inputs">
+        <h1>my prediction bingo sheet generator</h1>
+    
+        <div class="field-space">
+            <label for="sheet-title">
+                <span class="field-label text">title</span>
+                <input placeholder="bingo" type="text" id="sheet-title">
+            </label>
+        </div>
+    
+        <!-- A single field space -->
+        <div class="field-space required">
+            <!-- Label should target the last input in the list. -->
+            <label for="prediction-0">
+                <!-- Label text -->
+                <span class="field-label-text">predictions</span>
+    
+                <!-- List of inputs  -->
+                <ol class="field-list">
+                    <!-- Single input. -->
+                    <li>
+                        <input placeholder="24 required" type="text" id="prediction-0" />
+                        <button class="remove-item" title="remove item">&#x00d7</button>
+                    </li>
+                </ol>
+                <div class="buttons">
+                    <button class="add-list-item">add item</button>
+                    <button class="clear-list">clear</button>
+                </div>
+            </label>
+        </div>
+    
+        <!-- Free spaces -->
+        <div class="field-space">
+            <label for="free-0">
+                <span class="field-label-text">free space texts</span>
+                <ol class="field-list">
+                    <li>
+                        <input placeholder="free space" type="text" id="free-0" />
+                        <button class="remove-item" title="remove item">&#x00d7</button>
+                    </li>
+                </ol>
+                <div class="buttons">
+                    <button class="add-list-item">add item</button>
+                    <button class="clear-list">clear</button>
+                </div>
+            </label>
+        </div>
+    
+        <div class="field-space">
+            <label for="extra-css">
+                <span class="field-label-text">extra css</span>
+    
+                <textarea id="extra-css" placeholder="extra css goes here"></textarea>
+
+                <span class="hint">css customization guide in progress</span>
+            </label>
+        </div>
+
+        <div class="field-space">
+            <label for="count">
+                <span class="field-label text">sheet count</span>
+                <input type="number" id="sheet-count" value="1" min="1" />
+            </label>
+        </div>
+
+        <button id="make-pdfs">generate</button>
+    </section>
+
+    <span id="vanity">&triangle; 2025 crane presents &triangle;</span>
+</body>
+</html>
