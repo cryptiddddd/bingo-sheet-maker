@@ -6,7 +6,11 @@
 
     <meta name="darkreader-lock">
 
-    <title>bingo generator</title>
+    <title>make a bingo sheet</title>
+
+    <meta property="og:site_name" content="bingo sheet generator" />
+    <meta name="theme-color" content="#bb34bb" />
+    <meta name="description" content="(work in progress) generate bingo sheets!" />
 
     <link rel="stylesheet" href="style.css" >
 
@@ -19,7 +23,7 @@
 <body class="interface">
     
     <section class="inputs">
-        <h1>my prediction bingo sheet generator</h1>
+        <h1>my bingo sheet generator</h1>
     
         <div class="field-space">
             <label for="sheet-title">
@@ -47,6 +51,8 @@
                     <button class="add-list-item">add item</button>
                     <button class="clear-list">clear</button>
                 </div>
+
+                <span class="hint">each sheet will have shuffled and randomly selected spaces.</span>
             </label>
         </div>
     
@@ -64,6 +70,8 @@
                     <button class="add-list-item">add item</button>
                     <button class="clear-list">clear</button>
                 </div>
+
+                <span class="hint">each sheet will have randomly picked "free" space text.</span>
             </label>
         </div>
     
@@ -73,7 +81,7 @@
     
                 <textarea id="extra-css" placeholder="extra css goes here"></textarea>
 
-                <span class="hint">css customization guide in progress</span>
+                <span class="hint">css customization guide in progress.</span>
             </label>
         </div>
 
