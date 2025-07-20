@@ -1,7 +1,8 @@
 :root {
     --accent-color: #bb34bb;
     --main: white;
-    --bg: linear-gradient(45deg, #0f0f0f, #161616);
+    --bg-col: #0f0f0f;
+    --bg: linear-gradient(45deg, var(--bg-col), #161616);
 }
 
 ::selection {
@@ -28,6 +29,23 @@ body {
     color: var(--main);
     font-family: Ubuntu, monospace;
     font-size: 12px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-transform: uppercase;
+
+    color: var(--main);
 }
 
 
@@ -78,15 +96,31 @@ input, textarea {
 
 textarea {
     resize: vertical;
-    min-height: 3ch;
+    min-height: 10ch;
+
+    max-height: 40ch;
 }
 
 button {
-    background: #ffffff09;
+    background: color-mix(in srgb, var(--main) 3%, transparent);
+
+    transition: 400ms background;
 }
 
 button:hover {
-    background: #fff1;
+    background: color-mix(in srgb, var(--main) 15%, transparent);
+
+    transition: 200ms background;
+}
+
+button.submit {
+    background: var(--accent-color);
+    color: var(--bg-col);
+}
+
+button.submit:hover {
+    background: color-mix(in srgb, var(--accent-color) 60%, var(--main));
+
 }
 
 section {
@@ -129,4 +163,13 @@ section {
     font-style: italic;
     opacity: 0.6;
     margin: 2em;
+}
+
+@media (max-width: 900px) {
+    section {
+        margin: 0;
+        border-radius: 0;
+
+        padding: 2em;
+    }
 }

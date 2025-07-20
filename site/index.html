@@ -9,7 +9,7 @@
     <title>make a bingo sheet</title>
 
     <meta property="og:site_name" content="bingo sheet generator" />
-    <meta name="theme-color" content="#bb34bb" />
+    <meta name="theme-color" content="#161616" />
     <meta name="description" content="(work in progress) generate bingo sheets!" />
 
     <link rel="stylesheet" href="style.css" >
@@ -23,7 +23,9 @@
 <body class="interface">
     
     <section class="inputs">
-        <h1>my bingo sheet generator</h1>
+        <span id="version">version 0.0.2a</span>
+        <h1>prediction-bingo sheet generator</h1>
+
     
         <div class="field-space">
             <label for="sheet-title">
@@ -80,6 +82,7 @@
                 <span class="field-label-text">extra css</span>
     
                 <textarea id="extra-css" placeholder="extra css goes here"></textarea>
+                <button id="css-template">insert template</button>
 
                 <span class="hint">css customization guide in progress.</span>
             </label>
@@ -92,9 +95,9 @@
             </label>
         </div>
 
-        <button id="make-pdfs">generate</button>
+        <button id="make-pdfs" class="submit">generate</button>
     </section>
 
-    <span id="vanity">&triangle; 2025 crane presents &triangle;</span>
+    <span id="vanity">&triangle; 2025 crane presents &triangle; <a href="https://github.com/cryptiddddd/bingo-sheet-maker">source</a> &triangle;</span>
 </body>
 </html>

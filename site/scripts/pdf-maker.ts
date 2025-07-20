@@ -18,7 +18,29 @@ const predictionFields = itemListInputs[0];
 const freeSpaceFields = itemListInputs[1];
 
 
+const cssTemplate = `#title {
+    
+}
+
+.bingo-board {
+
+}
+
+.cell {
+
+}
+
+.free.cell {
+
+}`;
+
+
 // button callback
+(document.getElementById("css-template") as HTMLButtonElement)?.addEventListener("click", () => {
+    cssField.value += cssTemplate;
+});
+
+
 (document.getElementById("make-pdfs") as HTMLButtonElement)?.addEventListener("click", async () => {
     const template = await fetchTemplate();
     console.log(template);
