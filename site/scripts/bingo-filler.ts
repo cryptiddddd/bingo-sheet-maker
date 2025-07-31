@@ -2,13 +2,17 @@ import type { ListInput } from "./list-input";
 
 
 function pickRandom<T>(list: T[]): T {
-    return list[Math.floor(Math.random() * list.length)];
+    const rand = Math.random();
+    console.log("PICK RANDOM", rand)
+    return list[Math.floor(rand * list.length)];
 }
 
 function shuffle<T>(list: T[]): void {
     for (let i = list.length - 1; i > 0; i--) { 
+        const rand = Math.random();
+        console.log("SHUFFLE", rand);
         // Generate random index 
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(rand * (i + 1));
                     
         // Swap elements at indices i and j
         const temp = list[i];
@@ -28,6 +32,8 @@ export class BingoSheet {
 
     extraCSS: string;
 
+    size: number = 5;
+
     constructor(template: Document, title: string, predictionInputs: ListInput, freeSpaces: ListInput, css: string) {
         // assign template, pick a free space text
         this.template = template;
@@ -36,7 +42,7 @@ export class BingoSheet {
         // pick predictions
         const predictionTexts = predictionInputs.values();
         shuffle(predictionTexts);
-        this.predictions = predictionTexts.slice(0, 24);
+        this.predictions = predictionTexts.slice(0, this.size * this.size - 1);
 
         this.title = title;
         this.extraCSS = css;

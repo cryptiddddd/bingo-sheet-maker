@@ -48,12 +48,12 @@ const cssTemplate = `#title {
     for (let i = 0; i < Number(countField.value); i++) {
         console.log("printing", i);
         
-        generatePage(template, i);
+        await generatePage(template, i);
     }
 });
 
 
-function generatePage(template: Document, idx: number) {
+async function generatePage(template: Document, idx: number) {
     console.log(template.body);
 
     const title = titleField.value || "BINGO";
@@ -71,7 +71,7 @@ function generatePage(template: Document, idx: number) {
     const [ width, height ] = [ doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight() ];
     const [ windowWidth, windowHeight ] = [ 96 * WIDTH_INCHES, 96 * HEIGHT_INCHES]
 
-    doc.html(sheet.makeSheet().documentElement, {
+    await doc.html(sheet.makeSheet().documentElement, {
         callback: function (d) {
             d.deletePage(2);
             d.save(`${title.replaceAll(/[^A-Z0-9]/gmi, "-")}-${idx}.pdf`);
